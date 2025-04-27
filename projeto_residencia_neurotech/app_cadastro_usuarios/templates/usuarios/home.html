@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,6 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'usuarios/usuarioStyle.css' %}">
 
     <title>CRUD DE USUARIOS - REDISENCIA</title>
   </head>
@@ -17,6 +19,18 @@
         <a class="navbar-brand" href="#">Cadastro - Miau Dot</a>
         </div>
     </nav>
+
+    <form action="{% url 'listagem_usuarios' %}" method="post">
+        <div class="container">
+            <h1>Cadastro de Uusraios</h1>
+            Nome <input name="nome" class="form-control-sm" type="text">
+            Idade <input name="age" class="form-control-sm" type="text">
+            <Button class="form-control-sm">Enviar</Button>
+    
+        </div>
+    </form>
+
+
   
 
     <!-- Optional JavaScript; choose one of the two! -->
