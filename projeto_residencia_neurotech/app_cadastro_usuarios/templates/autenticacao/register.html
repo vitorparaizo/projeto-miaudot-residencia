@@ -6,19 +6,22 @@
     <title>REGISTER USER:</title>
 </head>
 <body>
-    <form methond="POST">
+    <form method="POST">
         {% csrf_token %}
         <div class="form-group">
+            {{ user_form.username.errors }}
             <label>Usuario: </label>
             {{user_form.username}}
 
         </div>
             <div class="form-group">
+             {{ user_form.password1.errors }}
             <label>Senha: </label>
             {{user_form.password1}}
 
         </div>
             <div class="form-group">
+            {{ user_form.password2.errors }}
             <label>Confirmação: </label>
             {{user_form.password2}}
         </div>
@@ -26,8 +29,6 @@
             <div class="form-group">
                 <input type="submit" value="Cadastre-se">
         </div>
-
-        
     </form>
     <!-- <h1>OLÁ</h1>
     {{  user_form   }}
