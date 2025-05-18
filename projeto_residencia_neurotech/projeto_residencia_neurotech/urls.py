@@ -1,16 +1,18 @@
 from django.urls import path 
 from app_cadastro_usuarios import views
-from app_cadastro_usuarios.views import login_view, register_view, inicio_view, logout_view
+from app_cadastro_usuarios.views import login_view, register_view, home_view, logout_view, petregister_view, petDescription_view
 from django.contrib import admin
 
 urlpatterns = [
     # rota , view , responsavel, nome 
-    
+
     path('admin/', admin.site.urls),
 
     path('login/', login_view, name='login'),
     path('login/', logout_view, name='logout'),
-    path('inicio/', inicio_view, name='inicio'),
+    path('home/', home_view, name='home'),
+    path('pet/register/', petregister_view, name="petregister"),
+    path('pet/description/', petDescription_view, name="petDescription"),
     path('register/', register_view, name='register')
 
 

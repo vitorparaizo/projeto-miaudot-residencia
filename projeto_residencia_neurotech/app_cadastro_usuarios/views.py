@@ -3,8 +3,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 
-def inicio_view(request):
+def home_view(request):
     return render(request, 'pages/home.html')
+
+def petregister_view(request):
+    return render(request, 'pages/petregister.html')
+
+def petDescription_view(request):
+    return render(request, 'pages/petDescription.html')
 
 def register_view(request):
     if request.method == "POST":
