@@ -12,6 +12,9 @@ def petregister_view(request):
 def petDescription_view(request):
     return render(request, 'pages/petDescription.html')
 
+def petCard_view(request):
+    return render(request, 'pages/petsCard.html')
+
 def register_view(request):
     if request.method == "POST":
         user_form = UserCreationForm(request.POST)

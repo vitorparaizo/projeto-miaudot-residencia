@@ -1,1 +1,36 @@
-register
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro de Animal</title>
+</head>
+<body>
+
+  <h1>Cadastro de Animal</h1>
+
+  <form action="#" method="post" enctype="multipart/form-data">
+    
+    <label for="foto">Foto do animal:</label><br>
+    <input type="file" id="foto" name="foto"><br><br>
+
+    <label for="nome">Nome:</label><br>
+    <input type="text" id="nome" name="nome"><br><br>
+
+    <label for="descricao">Descrição:</label><br>
+    <textarea id="descricao" name="descricao" rows="5" cols="50"></textarea><br><br>
+
+    <label for="idade">Idade:</label><br>
+    <input type="number" id="idade" name="idade" min="0"><br><br>
+
+    <label for="vacinado">Vacinado:</label><br>
+    <select id="vacinado" name="vacinado">
+      <option value="sim">Sim</option>
+      <option value="nao">Não</option>
+    </select><br><br>
+
+    <input type="submit" value="Enviar">
+
+  </form>
+
+</body>
+</html>

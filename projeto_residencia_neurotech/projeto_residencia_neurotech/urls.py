@@ -1,6 +1,6 @@
 from django.urls import path 
 from app_cadastro_usuarios import views
-from app_cadastro_usuarios.views import login_view, register_view, home_view, logout_view, petregister_view, petDescription_view
+from app_cadastro_usuarios.views import login_view, register_view, home_view, logout_view, petregister_view, petDescription_view, petCard_view
 from django.contrib import admin
 
 urlpatterns = [
@@ -13,6 +13,7 @@ urlpatterns = [
     path('home/', home_view, name='home'),
     path('pet/register/', petregister_view, name="petregister"),
     path('pet/description/', petDescription_view, name="petDescription"),
+    path('pet/list', petCard_view, name='petsCard'),
     path('register/', register_view, name='register')
 
 
