@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,5 +12,35 @@
         <input type="submit" value="Entrar">
     </form>
     
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <!-- <img src="/projeto_residencia_neurotech/app_cadastro_usuarios/templates/img/logo-miaudote-semfundo.png" alt="Logo Miaudote"> -->
+            <img src="{% static '\projeto_residencia_neurotech\app_cadastro_usuarios\templates\img\logo-miaudote-semfundo.png' %}" alt="Logo">
+            <h2>Miaudote</h2>
+        </div>
+
+        <form method="POST" class="login-form">
+            {% csrf_token %}
+            {{ login_form }}
+
+            <div class="forgot-password">
+                Esqueceu sua senha? <a href="#">Recupere</a>
+            </div>
+
+            <input type="submit" value="Login" class="login-btn">
+        </form>
+    </div>
 </body>
 </html>
