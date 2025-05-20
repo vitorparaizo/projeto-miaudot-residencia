@@ -14,20 +14,19 @@
     
 </body>
 </html> -->
-
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="styles-login.css">
+    <link rel="stylesheet" href="{% static 'autenticacao/styles-login.css' %}">
 </head>
 <body>
     <div class="login-container">
         <div class="logo">
-            <!-- <img src="/projeto_residencia_neurotech/app_cadastro_usuarios/templates/img/logo-miaudote-semfundo.png" alt="Logo Miaudote"> -->
-            <img src="{% static '\projeto_residencia_neurotech\app_cadastro_usuarios\templates\img\logo-miaudote-semfundo.png' %}" alt="Logo">
+            <img src="{% static 'autenticacao/logo-miaudote-semfundo.png' %}" alt="Logo Miaudote">
             <h2>Miaudote</h2>
         </div>
 

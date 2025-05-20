@@ -36,20 +36,22 @@
 </body>
 </html> -->
 
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastre-se</title>
-    <link rel="stylesheet" href="styles-register.css">
+    <link rel="stylesheet" href="{%  static 'autenticacao/styles-register.css'  %}">
 </head>
 <body>
     <div class="container">
         <div class="header">
             <div class="profile-pic">
                 <!-- Ícone de usuário -->
-                <span style="font-size: 2.5rem;">👩</span>
+                <span style="font-size: 2.5rem;"></span>
             </div>
         </div>
         <form method="POST" class="form-content">
