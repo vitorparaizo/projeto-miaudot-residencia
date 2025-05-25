@@ -3,11 +3,6 @@
 Miaudote é uma aplicação web que busca diminuir os índices de abandono animal.
 Para isso, foi desenvolvido uma aplicação onde ONGs e outras organizações para adoção de animais, possam registrar e disponibilizar de forma facilitada animais que aguardam adoção para possíveis tutores.
 
-## Integrantes
-- Ailton Cesar Anizio Santos
--
--
-- ...
 
 ## Quais tecnologias foram utilizadas?
 
