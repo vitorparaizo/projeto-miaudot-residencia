@@ -1,6 +1,6 @@
 from django.urls import path 
 from app_cadastro_usuarios import views
-from app_cadastro_usuarios.views import login_view, register_view, home_view, logout_view, petregister_view, petDescription_view, petCard_view
+from app_cadastro_usuarios.views import login_view, register_view, home_view, logout_view, petregister_view, petDescription_view, petCard_view, petAdoptionForm_view
 from django.contrib import admin
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('pet/register/', petregister_view, name="petregister"),
     path('pet/description/', petDescription_view, name="petDescription"),
     path('pet/list', petCard_view, name='petsCard'),
+    path('pet/adoption-form', petAdoptionForm_view, name="petAdoptionForm"),
     path('register/', register_view, name='register')
 
 
