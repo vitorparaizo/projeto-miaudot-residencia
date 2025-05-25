@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuidados com Pets</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #2d6a4f;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        .card {
+            background: white;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h3 {
+            margin: 0 0 10px 0;
+            color: #2d6a4f;
+        }
+        .map-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .map-section h2 {
+            margin-bottom: 15px;
+            color: #2d6a4f;
+        }
+        .map {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cuidados com seu Pet</h1>
+
+    <div class="container">
+        <div class="card">
+            <img src="https://via.placeholder.com/250x180?text=Higiene" alt="Higiene">
+            <div class="card-content">
+                <h3>Higiene</h3>
+                <p>Dicas de banho, escovação e cuidados básicos com a saúde do seu pet.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x180?text=Alimentação" alt="Alimentação">
+            <div class="card-content">
+                <h3>Alimentação</h3>
+                <p>Orientações sobre alimentação saudável e balanceada para cães e gatos.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://via.placeholder.com/250x180?text=Vacinação" alt="Vacinação">
+            <div class="card-content">
+                <h3>Vacinação</h3>
+                <p>Informações importantes sobre o calendário vacinal e prevenção de doenças.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <h2>Veterinários Credenciados Próximos</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31602.91877390497!2d-34.907437875195306!3d-8.064217299216434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab196f94e5408b%3A0xe5800ef782bde3a6!2sRecife%2C%20PE!5e0!3m2!1spt-BR!2sbr!4v1748211895271!5m2!1spt-BR!2sbr" 
+            width="600" height="450" style="border:0;" 
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+    </div>
+
+</body>
+</html>

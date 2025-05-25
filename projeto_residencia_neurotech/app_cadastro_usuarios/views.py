@@ -18,6 +18,9 @@ def petCard_view(request):
 def petAdoptionForm_view(request):
     return render(request, 'pages/adoptionForm.html')
 
+def petInfo_view(request):
+    return render(request, 'pages/info.html')
+
 
 def register_view(request):
     if request.method == "POST":
