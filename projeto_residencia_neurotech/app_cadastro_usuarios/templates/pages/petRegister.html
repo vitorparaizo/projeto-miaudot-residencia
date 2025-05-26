@@ -1,36 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro de Animal</title>
+  <link rel="stylesheet" href="{% static 'autenticacao/petRegister.css' %}">
 </head>
 <body>
 
-  <h1>Cadastro de Animal</h1>
+  <div class="container">
+    <div class="header">
+      <div class="profile-pic">
+        <img src="{% static 'autenticacao/logo-miaudote-semfundo.png' %}" alt="Logo Miaudote" style="width: 70px; height: 70px; border-radius: 50%;">
+      </div>
+    </div>
 
-  <form action="#" method="post" enctype="multipart/form-data">
-    
-    <label for="foto">Foto do animal:</label><br>
-    <input type="file" id="foto" name="foto"><br><br>
+    <form method="post" enctype="multipart/form-data" class="form-content">
+      {% csrf_token %}
 
-    <label for="nome">Nome:</label><br>
-    <input type="text" id="nome" name="nome"><br><br>
+      <div class="form-group">
+        <label for="{{ form.foto.id_for_label }}">Foto do animal:</label>
+        {{ form.foto }}
+      </div>
 
-    <label for="descricao">Descrição:</label><br>
-    <textarea id="descricao" name="descricao" rows="5" cols="50"></textarea><br><br>
+      <div class="form-group">
+        <label for="{{ form.nome.id_for_label }}">Nome:</label>
+        {{ form.nome }}
+      </div>
 
-    <label for="idade">Idade:</label><br>
-    <input type="number" id="idade" name="idade" min="0"><br><br>
+      <div class="form-group">
+        <label for="{{ form.descricao.id_for_label }}">Descrição:</label>
+        {{ form.descricao }}
+      </div>
 
-    <label for="vacinado">Vacinado:</label><br>
-    <select id="vacinado" name="vacinado">
-      <option value="sim">Sim</option>
-      <option value="nao">Não</option>
-    </select><br><br>
+      <div class="form-group">
+        <label for="{{ form.idade.id_for_label }}">Idade:</label>
+        {{ form.idade }}
+      </div>
 
-    <input type="submit" value="Enviar">
+      <div class="form-group">
+        <label for="{{ form.vacinado.id_for_label }}">Vacinado:</label>
+        {{ form.vacinado }}
+      </div>
 
-  </form>
+      <div class="form-group">
+        <input type="submit" value="Cadastrar Animal">
+      </div>
+    </form>
+  </div>
 
 </body>
 </html>
