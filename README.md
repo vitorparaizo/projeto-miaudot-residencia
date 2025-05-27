@@ -6,7 +6,7 @@ Para isso, foi desenvolvido uma aplicação onde ONGs e outras organizações pa
 
 ## Quais tecnologias foram utilizadas?
 
-Para desenvolver o projeto de forma ágil, nos reunimos para escolher as ferramentas de maior afinidade entre os integrantes do grupo. 
+Para desenvolver o projeto de forma ágil, nos reunimos para escolher as ferramentas de maior afinidade entre os integrantes do grupo, sendo eles:
 
 Backend: Django, framework open source de Python que fornece ferramentas e bibliotecas para agilizar tarefas comuns de desenvolvimento web: como autenticação, interação com banco de dados e tratamento de formulários.
 

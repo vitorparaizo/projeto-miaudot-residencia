@@ -7,7 +7,7 @@ from .models import Pet
 # HOME VIEW (feed de pets ordenado do mais recente para o mais antigo)
 def home_view(request):
     pets = Pet.objects.all()
-    return render(request, 'autenticacao/pages/home.html', {'pets': pets})
+    return render(request, 'pages/home.html', {'pets': pets})
 
 # CADASTRO DE PET
 def petregister_view(request):
