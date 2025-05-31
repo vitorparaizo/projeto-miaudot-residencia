@@ -32,20 +32,25 @@ body {
 
 .post {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     margin-bottom: 20px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
+#vitorparaizo #ajuste-na-imagem
 .post-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    display: block; 
+    max-width: 90%; 
+    height: auto; 
+    object-fit: cover; 
+    margin: 0 auto; 
+    border-radius: 12px; 
 }
 
+
 .post-details {
-    padding: 15px;
+    padding: 20px;
 }
 
 .post-details h2 {

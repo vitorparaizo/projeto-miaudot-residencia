@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Feed - Miaudote</title>
-    <link rel="stylesheet" href="{% static 'autenticacao/home.css' %}">
+    <link rel="stylesheet" href="{% static 'pages-style/home.css' %}">
 </head>
 <body>
     <header class="header">
         <img src="{% static 'autenticacao/logo-miaudote-semfundo.png' %}" alt="Logo" class="logo">
-        <h1>Miaudote</h1>
+        <h1></h1>
     </header>
 
     <div class="feed-container">
@@ -29,7 +29,7 @@
             </div>
 
             <div class="post-footer">
-                <a href="{% url 'detalhes_pet' pet.id %}" class="view-more">Ver mais</a>
+                <a href="{% url 'petDescription' pet.id %}" class="view-more">Ver mais</a>
             </div>
         </div>
         {% empty %}

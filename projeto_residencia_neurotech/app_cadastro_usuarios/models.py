@@ -1,6 +1,9 @@
-# models.py
+
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class Pet(models.Model):
     nome = models.CharField(max_length=100)
@@ -30,3 +33,14 @@ class CandidaturaAdocao(models.Model):
     pet = models.ForeignKey(Pet, on_delete=models.CASCADE)
     mensagem = models.TextField()
     data = models.DateTimeField(auto_now_add=True)
+
+class Ong(models.Model):
+    nome = models.CharField(max_length=255)
+    cnpj = models.CharField(max_length=18, unique=True)
+    telefone = models.CharField(max_length=15)
+    email = models.EmailField(unique=True)
+    endereco = models.CharField(max_length=255)
+    responsavel = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ongs')
+
+    def __str__(self):
+        return self.nome

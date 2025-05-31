@@ -60,48 +60,33 @@
 </head>
 <body>
 
-    <h1>Animais Disponíveis para Adoção</h1>
-    <div class="container">
-        <div class="card">
-            <img src="https://placekitten.com/300/200" alt="Gato fofo">
-            <div class="card-content">
-                <h3>Bolinha</h3>
-                <p>Idade: 2 anos</p>
-                <p>Raça: Vira-lata</p>
-                <button class="like-btn">❤️</button>
-            </div>
-        </div>
+<h1>Animais Disponíveis para Adoção</h1>
 
-        <div class="card">
-            <img src="https://placedog.net/300/200?id=1" alt="Cachorro fofinho">
-            <div class="card-content">
-                <h3>Rex</h3>
-                <p>Idade: 3 anos</p>
-                <p>Raça: Labrador</p>
-                <button class="like-btn">❤️</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="https://placekitten.com/301/200" alt="Outro gato fofo">
-            <div class="card-content">
-                <h3>Mia</h3>
-                <p>Idade: 1 ano</p>
-                <p>Raça: Siamês</p>
-                <button class="like-btn">❤️</button>
-            </div>
+<div class="container">
+    {% for pet in pets %}
+    <div class="card">
+        <img src="{{ pet.foto.url }}" alt="{{ pet.nome }}">
+        <div class="card-content">
+            <h3>{{ pet.nome }}</h3>
+            <p>Idade: {{ pet.idade }} anos</p>
+            <p>Raça: {{ pet.raca }}</p>
+            <a href="{% url 'petDescription' pet.id %}">Ver mais</a>
+            <button class="like-btn">❤️</button>
         </div>
     </div>
+    {% empty %}
+    <p>Nenhum animal disponível para adoção no momento.</p>
+    {% endfor %}
+</div>
 
-    <script>
-        const likeButtons = document.querySelectorAll('.like-btn');
-
-        likeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('liked');
-            });
+<script>
+    const likeButtons = document.querySelectorAll('.like-btn');
+    likeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            button.classList.toggle('liked');
         });
-    </script>
+    });
+</script>
 
 </body>
 </html>

@@ -2,25 +2,50 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Descrição do Animal</title>
+  <title>Descrição de {{ pet.nome }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    img {
+      border-radius: 10px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+    }
+    .info {
+      max-width: 600px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 15px;
+      background-color: #2d6a4f;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
 
-  <table border="0" width="100%">
-    <tr>
-      <td width="150">
-        <img src="https://via.placeholder.com/150" alt="Foto do Rex" width="150" height="150">
-      </td>
-      <td>
-        <h2>Rex</h2>
-      </td>
-    </tr>
-  </table>
+  <div class="container">
+    <img src="{{ pet.foto.url }}" alt="Foto de {{ pet.nome }}">
+    <div class="info">
+      <h2>{{ pet.nome }}</h2>
+      <p><strong>Descrição:</strong> {{ pet.descricao }}</p>
+      <p><strong>Idade:</strong> {{ pet.idade }} anos</p>
+      <p><strong>Vacinado:</strong> {% if pet.vacinado %}Sim{% else %}Não{% endif %}</p>
 
-  <p><strong>Descrição:</strong> Rex é um cachorro muito brincalhão e fiel. Adora correr, brincar com crianças e proteger a casa. Ele se dá bem com outros animais e está procurando uma nova família cheia de amor.</p>
-
-  <p><strong>Idade:</strong> 3 anos</p>
-  <p><strong>Vacinado:</strong> Sim</p>
+      <a class="btn" href="{% url 'petAdoptionForm' pet.id %}">Tenho interesse em adotar</a>
+    </div>
+  </div>
 
 </body>
 </html>
