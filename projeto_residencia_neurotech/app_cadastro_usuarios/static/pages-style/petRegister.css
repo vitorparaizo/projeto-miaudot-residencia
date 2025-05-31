@@ -10,19 +10,22 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding: 20px; 
 }
 
 .container {
-    width: 360px;
+    width: 100%;
+    max-width: 600px; 
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
 .header {
     background-color: #c4601e;
-    height: 120px;
+    height: 140px;
     border-bottom-left-radius: 80px;
     border-bottom-right-radius: 80px;
     display: flex;
@@ -90,8 +93,40 @@ input[type="submit"]:hover {
     background-color: #a14f18;
 }
 
-@media (max-width: 400px) {
+
+@media (max-width: 480px) {
     .container {
-        width: 90%;
+        width: 100%;
+        padding: 0 10px;
+        border-radius: 0; 
+    }
+
+    .header {
+        height: 120px;
+        border-bottom-left-radius: 60px;
+        border-bottom-right-radius: 60px;
+    }
+
+    .form-content {
+        padding: 70px 15px 30px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .form-content {
+        padding: 100px 40px 40px;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input, select {
+        font-size: 1.05rem;
+    }
+
+    input[type="submit"] {
+        font-size: 1.1rem;
     }
 }

@@ -44,3 +44,15 @@ class Ong(models.Model):
 
     def __str__(self):
         return self.nome
+    
+# class enviarForm(models.Model):
+#     sendform = models.CharField(max_lenght=225)
+#     imageForm = models.CharField(max_length=255)
+#     mailForm = models.ImageField(max_lenght=255)
+#     buttonSend = models.CharFiel(max_lenght=350)
+
+#     def __strt__(self):
+#         return self.enviarForm
+    
+# # class chooselForm(models.Model):
+# #     textfield = models.CharField(max_length=277)

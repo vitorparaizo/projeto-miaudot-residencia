@@ -2,29 +2,37 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Adoção de Pet</title>
+    <title>Adoção de Pet - {{ pet.nome }}</title>
 </head>
 <body style="font-family: Arial; margin: 20px; background-color: #f0f0f0;">
 
     <h2 style="color: #2d6a4f;">Informações do Pet</h2>
     <div style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1);">
-        <p><strong>Nome:</strong> Bolinha</p>
-        <p><strong>Idade:</strong> 2 anos</p>
-        <p><strong>Raça:</strong> Vira-lata</p>
-        <p><strong>Descrição:</strong> Muito carinhoso e brincalhão. Ótimo para famílias com crianças.</p>
+        
+        {% if pet.foto %}
+            <img src="{{ pet.foto.url }}" alt="Foto de {{ pet.nome }}" style="width:150px; height:150px; border-radius: 5px; margin-bottom: 15px;">
+        {% else %}
+            <img src="https://via.placeholder.com/150" alt="Sem foto" style="width:150px; height:150px; border-radius: 5px; margin-bottom: 15px;">
+        {% endif %}
+
+        <p><strong>Nome:</strong> {{ pet.nome }}</p>
+        <p><strong>Idade:</strong> {{ pet.idade }} anos</p>
+        <p><strong>Raça:</strong> {{ pet.raca }}</p>
+        <p><strong>Descrição:</strong> {{ pet.descricao }}</p>
     </div>
 
     <h2 style="color: #2d6a4f; margin-top: 30px;">Formulário de Adoção</h2>
-    <form style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1);">
+    <form method="post" style="background-color: #fff; padding: 15px; border-radius: 5px; box-shadow: 1px 1px 5px rgba(0,0,0,0.1);">
+        {% csrf_token %}
         
         <label for="nome">Seu nome:</label><br>
-        <input type="text" id="nome" name="nome" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"><br>
+        <input type="text" id="nome" name="nome" required style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"><br>
 
         <label for="email">Seu email:</label><br>
-        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"><br>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"><br>
 
-        <label for="mensagem">Por que deseja adotar o Bolinha?</label><br>
-        <textarea id="mensagem" name="mensagem" rows="4" style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"></textarea><br>
+        <label for="mensagem">Por que deseja adotar o {{ pet.nome }}?</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" required style="width: 100%; padding: 8px; margin: 5px 0 15px 0; border: 1px solid #ccc; border-radius: 4px;"></textarea><br>
 
         <button type="submit" style="background-color: #2d6a4f; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
             Enviar Solicitação

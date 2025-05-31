@@ -25,37 +25,51 @@ body {
 }
 
 .feed-container {
+    width: 90%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .post {
     background: white;
     border-radius: 20px;
-    margin-bottom: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
 }
 
-#vitorparaizo #ajuste-na-imagem
+.post-image-container {
+    position: relative;
+}
+
 .post-image {
-    display: block; 
-    max-width: 90%; 
-    height: auto; 
-    object-fit: cover; 
-    margin: 0 auto; 
-    border-radius: 12px; 
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
+.post-title-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
 
 .post-details {
-    padding: 20px;
-}
-
-.post-details h2 {
-    margin: 0 0 10px;
-    color: #333;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .post-details p {
@@ -63,33 +77,62 @@ body {
     font-size: 0.95rem;
 }
 
-.post-actions {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    border-top: 1px solid #eee;
-}
-
-.post-actions button {
-    background: none;
-    border: none;
-    color: #c4601e;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
 .post-footer {
     text-align: center;
-    padding: 10px;
+    padding: 12px;
     border-top: 1px solid #eee;
 }
 
 .view-more {
-    color: #c4601e;
-    font-weight: bold;
+    display: inline-block;
+    background-color: #c4601e;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;
     text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
 .view-more:hover {
-    text-decoration: underline;
+    background-color: #a3470e;
+}
+
+@media (max-width: 768px) {
+    .feed-container {
+        width: 95%;
+    }
+
+    .post-title-overlay {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+
+    .post-details p {
+        font-size: 0.85rem;
+    }
+
+    .view-more {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    .logo {
+        width: 40px;
+    }
+
+    .post-details {
+        padding: 12px;
+    }
+
+    .post-footer {
+        padding: 8px;
+    }
 }

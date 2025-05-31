@@ -42,7 +42,7 @@ def pet_list_view(request):
 
 
 def petAdoptionForm_view(request, pet_id):
-    pet = get_object_or_404(request, pet_id)
+    pet = get_object_or_404(Pet, id=pet_id)
     return render(request, 'pages/adoptionForm.html', {'pet':pet})
 
 

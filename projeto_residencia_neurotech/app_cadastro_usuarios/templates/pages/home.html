@@ -15,17 +15,13 @@
     <div class="feed-container">
         {% for pet in pets %}
         <div class="post">
-            <img src="{{ pet.foto.url }}" alt="{{ pet.nome }}" class="post-image">
-
-            <div class="post-details">
-                <h2>{{ pet.nome }}</h2>
-                <p>{{ pet.descricao|truncatechars:100 }}</p>
+            <div class="post-image-container">
+                <img src="{{ pet.foto.url }}" alt="{{ pet.nome }}" class="post-image">
+                <div class="post-title-overlay">{{ pet.nome }}</div>
             </div>
 
-            <div class="post-actions">
-                <button class="like-btn">Curtir ❤️</button>
-                <button class="comment-btn">Comentar 💬</button>
-                <button class="share-btn">Compartilhar 🔄</button>
+            <div class="post-details">
+                <p>{{ pet.descricao|truncatechars:100 }}</p>
             </div>
 
             <div class="post-footer">

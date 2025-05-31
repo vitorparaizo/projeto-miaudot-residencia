@@ -6,18 +6,21 @@
 body {
     margin: 0;
     background-color: #f6f3eb;
+    min-height: 100vh;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start; 
 }
 
 .container {
-    width: 360px;
+    width: 100%;
+    max-width: 500px; 
     background-color: #fff;
     border-radius: 16px;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
 }
 
 .header {
@@ -74,10 +77,17 @@ select {
 .dob-gender {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
 }
 
 .dob-gender .form-group {
-    flex: 1;
+    flex: 1 1 100%;
+}
+
+@media (min-width: 500px) {
+    .dob-gender .form-group {
+        flex: 1; 
+    }
 }
 
 input[type="submit"] {
