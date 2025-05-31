@@ -45,14 +45,13 @@ class Ong(models.Model):
     def __str__(self):
         return self.nome
     
-# class enviarForm(models.Model):
-#     sendform = models.CharField(max_lenght=225)
-#     imageForm = models.CharField(max_length=255)
-#     mailForm = models.ImageField(max_lenght=255)
-#     buttonSend = models.CharFiel(max_lenght=350)
+class Adocao(models.Model):
+    pet = models.ForeignKey(Pet, on_delete=models.CASCADE, related_name='adocoes')
+    nome = models.CharField(max_length=100)
+    email = models.EmailField()
+    mensagem = models.TextField()
+    data_envio = models.DateTimeField(auto_now_add=True)
 
-#     def __strt__(self):
-#         return self.enviarForm
+    def __str__(self):
+        return f"Adoção de {self.pet.nome} por {self.nome}"
     
-# # class chooselForm(models.Model):
-# #     textfield = models.CharField(max_length=277)

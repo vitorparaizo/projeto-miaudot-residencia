@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'app_cadastro_usuarios',
 ]
 
+LOGIN_URL = '/login/'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

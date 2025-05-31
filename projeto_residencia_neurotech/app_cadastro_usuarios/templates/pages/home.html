@@ -4,33 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Feed - Miaudote</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'pages-style/home.css' %}">
+    <link rel="stylesheet" href="{% static 'pages-style/menu.css' %}">
 </head>
 <body>
+
     <header class="header">
-        <img src="{% static 'autenticacao/logo-miaudote-semfundo.png' %}" alt="Logo" class="logo">
-        <h1></h1>
-    </header>
-
-    <div class="feed-container">
-        {% for pet in pets %}
-        <div class="post">
-            <div class="post-image-container">
-                <img src="{{ pet.foto.url }}" alt="{{ pet.nome }}" class="post-image">
-                <div class="post-title-overlay">{{ pet.nome }}</div>
-            </div>
-
-            <div class="post-details">
-                <p>{{ pet.descricao|truncatechars:100 }}</p>
-            </div>
-
-            <div class="post-footer">
-                <a href="{% url 'petDescription' pet.id %}" class="view-more">Ver mais</a>
+        <div class="user-info">
+            <div>
+                <p class="user-name">Olá, {{ user.username }}!</p>
             </div>
         </div>
+    </header>
+
+    <main class="feed">
+        {% for pet in pets %}
+        <a href="{% url 'petDescription' pet.id %}" class="feed-link">
+            <div class="feed-card">
+                <div class="feed-image">
+                    <img src="{{ pet.foto.url }}" alt="Foto de {{ pet.nome }}">
+                </div>
+                <div class="feed-caption">
+                    <h3>{{ pet.nome }}</h3>
+                    <p>{{ pet.idade }} anos</p>
+                </div>
+            </div>
+        </a>
         {% empty %}
         <p>Nenhum pet encontrado.</p>
         {% endfor %}
-    </div>
+    </main>
+
+
+    <nav class="bottom-nav">
+        <a href="#">
+            <img src="{% static 'icons/home.svg' %}" alt="Início">
+            <span>Início</span>
+        </a>
+        <a href="#">
+            <img src="{% static 'icons/add.svg' %}" alt="Adicionar">
+        </a>
+        <a href="#">
+            <img src="{% static 'icons/tools.svg' %}" alt="Config">
+        </a>
+        <a href="#">
+            <img src="{% static 'icons/profile.svg' %}" alt="Perfil">
+            <span>Perfil</span>
+        </a>
+    </nav>
+
 </body>
 </html>

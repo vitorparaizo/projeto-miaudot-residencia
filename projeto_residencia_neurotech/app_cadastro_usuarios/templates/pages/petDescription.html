@@ -1,37 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Descrição de {{ pet.nome }}</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    .container {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-    img {
-      border-radius: 10px;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-    }
-    .info {
-      max-width: 600px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 15px;
-      background-color: #2d6a4f;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  </style>
+  <link rel="stylesheet" href="{% static 'pages-style/description-style.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
