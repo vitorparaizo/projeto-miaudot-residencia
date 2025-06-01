@@ -5,6 +5,7 @@
 name: Build and deploy Python app to Azure Web App - miaudote
 
 on:
+
   push:
     branches:
       - main
