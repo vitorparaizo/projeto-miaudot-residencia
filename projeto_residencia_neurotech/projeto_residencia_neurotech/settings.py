@@ -136,6 +136,4 @@ STATICFILES_DIRS = [
 #conf para azure 
 ALLOWED_HOSTS = ['miaudote-e9e5eucdehhfcuaz.brazilsouth-01.azurewebsites.net']
 
-
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
